@@ -6,7 +6,7 @@ commandTests:
       - -c
       - |
         python --version
-    expectedOutput: ["Python 3.12*"]
+    expectedOutput: ["Python 3.14*"]
   - name: "Operating System"
     command: "sh"
     args:
@@ -28,3 +28,10 @@ commandTests:
       - |
         dpkg -l | grep unixodb
     expectedOutput: [".*unixodbc.*2.3.*"]
+  - name: "uv installed"
+    command: "sh"
+    args:
+      - -c
+      - |
+        uv --version
+    expectedOutput: ["uv .*"]
